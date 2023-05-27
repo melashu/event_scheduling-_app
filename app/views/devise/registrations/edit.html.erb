@@ -3,32 +3,35 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+   <div class="field mb-6 flex flex-col">
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"w-6/12" %>
+  </div>
+  <div class="field mb-6 flex flex-col">
+    <%= f.label :first_name%> 
+    <%= f.text_field :first_name, placeholder: "Your first name", class:"w-6/12"%>
+  </div>
+   <div class="field mb-6 flex flex-col">
+    <%= f.label :last_name%> 
+    <%= f.text_field :last_name, placeholder: "Your last name", class:"w-6/12"%>
+  </div>
+  <div class="field mb-6 flex flex-col">
+    <%= f.label :booking_link%> 
+    <%= f.text_field :booking_link, placeholder: "Booking link", class:"w-6/12"%>
   </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+    <div class="field mb-6 flex flex-col">
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.label :password %>
     <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %>
+    <%= f.password_field :password, autocomplete: "new-password" , class:"w-6/12"%>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+  <div class="field mb-6 flex flex-col">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"w-6/12" %>
   </div>
 
   <div class="actions">
