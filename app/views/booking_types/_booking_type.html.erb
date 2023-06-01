@@ -1,4 +1,4 @@
-<div id="<%= dom_id booking_type %>">
+<div id="<%= dom_id booking_type %>" class="border border-spacing-x-48 mb-3 p-5 shadow-xl">
   <p>
     <strong>Name:</strong>
     <%= booking_type.name %>
@@ -38,10 +38,7 @@
     <strong>User:</strong>
     <%= booking_type.user_id %>
   </p>
-
-  <p>
-    <strong>Booking ling:</strong>
-    <%= booking_type.booking_ling %>
-  </p>
-
+    <p>
+      <%= link_to "Show this booking type", booking_type, class: button_style %>
+    </p>
 </div>

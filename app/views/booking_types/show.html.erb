@@ -4,9 +4,8 @@
 
 <%= render @booking_type %>
 
-<div>
+<div class="flex gap-6 items-center">
   <%= link_to "Edit this booking type", edit_booking_type_path(@booking_type) %> |
   <%= link_to "Back to booking types", booking_types_path %>
-
-  <%= button_to "Destroy this booking type", @booking_type, method: :delete %>
+  <%= button_to "Destroy this booking type", @booking_type, method: :delete, class: button_style %>
 </div>

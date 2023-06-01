@@ -3,7 +3,7 @@
     <div style="color: red">
       <h2><%= pluralize(booking_type.errors.count, "error") %> prohibited this booking_type from being saved:</h2>
 
-      <ul>
+      <ul class="font-thin">
         <% booking_type.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
@@ -12,51 +12,43 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.label :name, style: "display: block", class: label_style %>
+    <%= form.text_field :name, class: input_style %>
   </div>
 
   <div>
-    <%= form.label :location, style: "display: block" %>
-    <%= form.text_field :location %>
+    <%= form.label :location, style: "display: block", class: label_style %>
+    <%= form.text_field :location , class: input_style%>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.rich_text_area :description %>
+    <%= form.label :description, style: "display: block", class: label_style %>
+    <%= form.rich_text_area :description, class: input_style %>
   </div>
 
   <div>
-    <%= form.label :color, style: "display: block" %>
-    <%= form.text_field :color %>
+    <%= form.label :color, style: "display: block", class: label_style %>
+    <%= form.color_field :color %>
   </div>
 
   <div>
-    <%= form.label :duration, style: "display: block" %>
-    <%= form.number_field :duration %>
+    <%= form.label :duration, style: "display: block", class: label_style %>
+    <%= form.number_field :duration, class: input_style %>
+  </div>
+
+  <div class="flex items-center">
+    <%= form.check_box :payement_required%>
+    <%= form.label :payement_required, style: "display: block", class: label_style %>
   </div>
 
   <div>
-    <%= form.label :payement_required, style: "display: block" %>
-    <%= form.check_box :payement_required %>
+    <%= form.label :price, style: "display: block", class: label_style %>
+    <%= form.number_field :price, value: 0, class: input_style %>
   </div>
 
-  <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.number_field :price %>
-  </div>
+  <div class="flex flex-row gap-6 w-max m-5 ">
+    <%= form.submit class: button_style %>
+    <%= link_to "Back to booking types", booking_types_path, class: link_style%>
 
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div>
-    <%= form.label :booking_ling, style: "display: block" %>
-    <%= form.text_field :booking_ling %>
-  </div>
-
-  <div>
-    <%= form.submit %>
   </div>
 <% end %>

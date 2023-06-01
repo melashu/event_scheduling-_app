@@ -4,13 +4,13 @@
 
 <h1>Booking types</h1>
 
-<div id="booking_types">
+<div id="booking_types" >
   <% @booking_types.each do |booking_type| %>
     <%= render booking_type %>
     <p>
-      <%= link_to "Show this booking type", booking_type %>
+      <%= link_to "Show this booking type", booking_type, class: button_style %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "Create New Booking Type", new_booking_type_path %>
+<%= link_to "Create New Booking Type", new_booking_type_path, class: button_style %>
