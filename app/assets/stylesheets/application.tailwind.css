@@ -11,3 +11,16 @@
 }
 
 */
+
+@layer components{
+ .title{
+    @apply text-3xl text-gray-700 font-serif font-extrabold;
+}
+.table{
+  @apply table-collapse w-full
+}
+
+.table-cell{
+@apply border border-slate-300 p-3 text-left bg-slate-50
+}
+}

@@ -1,0 +1,12 @@
+<header class="flex justify-between w-full p-5 m-5 shadow-xl border">
+
+<ul class="flex gap-1 align-middle">
+ <li class="text-black font-bold no-underline"><%= link_to "Home", authenticated_root_path%> </li>
+ <li class="text-black font-bold no-underline"><%= link_to "Create Booking Type", new_booking_type_path%> </li>
+</ul>
+<div class="flex  gap-1 align-baseline justify-center">
+<%= link_to "Edit Profile", edit_user_registration_path, class: link_style%>
+<%= button_to("Log out", destroy_user_session_path, method: :delete, class: button_style)%>
+</div>
+
+</header>

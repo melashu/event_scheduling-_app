@@ -1,1 +1,16 @@
-<h1>Welcome</h1>
+<%= render "dashboard" %>
+<div class="py-10 grid gird-cols-3 gap-6">
+ <%= render @booking_type%>
+</div>
+
+<% if @bookings.pending.any?%>
+  <%= render "pending", bookings: @bookings%>
+<%end%>
+
+<% if @bookings.approved.any?%>
+  <%= render "approved", bookings: @bookings%>
+<%end%>
+
+<% if @bookings.unapproved.any?%>
+  <%= render "unapproved", bookings: @bookings%>
+<%end%>
