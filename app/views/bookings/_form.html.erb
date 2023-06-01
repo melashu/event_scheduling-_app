@@ -12,43 +12,43 @@
   <% end %>
 
   <div>
-    <%= form.label :status, style: "display: block" %>
+    <%= form.label :status, style: "display: block", class: label_style %>
     <%= form.number_field :status %>
   </div>
 
   <div>
-    <%= form.label :first_name, style: "display: block" %>
-    <%= form.text_field :first_name %>
+    <%= form.label :first_name, style: "display: block", class: label_style %>
+    <%= form.text_field :first_name, class: input_style %>
   </div>
 
   <div>
-    <%= form.label :last_name, style: "display: block" %>
-    <%= form.text_field :last_name %>
+    <%= form.label :last_name, style: "display: block", class: label_style %>
+    <%= form.text_field :last_name, class: input_style %>
   </div>
 
   <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+    <%= form.label :email, style: "display: block", class: label_style %>
+    <%= form.text_field :email, class: input_style %>
   </div>
 
   <div>
-    <%= form.label :notes, style: "display: block" %>
-    <%= form.rich_text_area :notes %>
+    <%= form.label :notes, style: "display: block", class: label_style %>
+    <%= form.rich_text_area :notes, class: input_style %>
   </div>
 
   <div>
-    <%= form.label :start_date, style: "display: block" %>
+    <%= form.label :start_date, style: "display: block", class: label_style %>
     <%= form.datetime_field :start_date %>
   </div>
 
   <div>
-    <%= form.label :end_date, style: "display: block" %>
+    <%= form.label :end_date, style: "display: block", class: label_style %>
     <%= form.datetime_field :end_date %>
   </div>
 
-  <div>
-    <%= form.label :customer_paid, style: "display: block" %>
+  <div class="flex items-center">
     <%= form.check_box :customer_paid %>
+    <%= form.label :customer_paid, style: "display: block", class: label_style %>
   </div>
 
   <div>
@@ -56,7 +56,9 @@
     <%= form.text_field :booking_type_id %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="flex gap-6 items-center my-4">
+    <%= form.submit class: button_style %>
+  <%= link_to "Back to bookings", bookings_path, class: link_style %>
+
   </div>
 <% end %>
