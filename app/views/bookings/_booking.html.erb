@@ -1,47 +1,19 @@
-<div id="<%= dom_id booking %>">
-  <p>
-    <strong>Status:</strong>
-    <%= booking.status %>
-  </p>
+<tr id="<%= dom_id booking %>">
+<td class="table-td">
+  <%=form_with(model: booking, method: :patch) do |form|%>
+    <%=form.select :status, options_for_select(Booking.statuses.map {|key, value| [key.capitalize, key]}, form.object.status), class: input_style%>
+  <%end%>
+</td>
 
-  <p>
-    <strong>First name:</strong>
-    <%= booking.first_name %>
-  </p>
-
-  <p>
-    <strong>Last name:</strong>
-    <%= booking.last_name %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= booking.email %>
-  </p>
-
-  <p>
-    <strong>Notes:</strong>
-    <%= booking.notes %>
-  </p>
-
-  <p>
-    <strong>Start date:</strong>
-    <%= booking.start_date %>
-  </p>
-
-  <p>
-    <strong>End date:</strong>
-    <%= booking.end_date %>
-  </p>
-
-  <p>
-    <strong>Customer paid:</strong>
-    <%= booking.customer_paid %>
-  </p>
-
-  <p>
-    <strong>Booking type:</strong>
-    <%= booking.booking_type_id %>
-  </p>
-
-</div>
+    
+    
+        <td class="table-td"><%= booking.first_name %> <%= booking.last_name %></td>
+        <td class="table-td">    <%= booking.email %>
+</td>
+    
+        <td class="table-td"><%= booking.start_date.strftime('%D at %I:%M%p') %></td>
+        <td class="table-td"><%= booking.end_date.strftime('%D at %I:%M%p') %></td>
+        <td class="table-td"><%= booking.booking_type.name %></td>
+        <td class="table-td"><%=booking.booking_type.payement_required? ? "Yes" : "No"%></td>
+        <td class="table-td"><%= booking.customer_paid? ? "Yes" : "No" %></td>
+</tr>
