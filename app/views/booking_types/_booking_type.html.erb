@@ -1,44 +1,25 @@
-<div id="<%= dom_id booking_type %>" class="border border-spacing-x-48 mb-3 p-5 shadow-xl">
-  <p>
-    <strong>Name:</strong>
-    <%= booking_type.name %>
-  </p>
+<div id="<%= dom_id booking_type %>">
+  <%=link_to booking_type_path(booking_type), class: "each-booking-type" do%>
+    <div class="h-1 w-full bg-slate-600 absolute top-0 left-0 right-0", style="background-color: <%=booking_type.color%>"></div>
+      <p>
+    <h3 class="font-medium text-2xl font-serif">Name <%= booking_type.name %></h3>
+    <p class="para-text">Duration: <%=duration(booking_type)%></p>
+    <p class="para-text"> Location <%=booking_type.location%></p>
 
-  <p>
-    <strong>Location:</strong>
-    <%= booking_type.location %>
+    <%if booking_type.payement_required?%>
+       <div class="mt-2 pt-3 border-t-2">
+        <p>
+          <strong>Payement</strong>
+        </p>
+        <p>
+          <strong>Price</strong>
+          <%=number_to_currency(booking_type.price)%>
+        </p>
+       </div>
+    <%end%>
   </p>
+  <%end%>
 
-  <p>
-    <strong>Description:</strong>
-    <%= booking_type.description %>
-  </p>
 
-  <p>
-    <strong>Color:</strong>
-    <%= booking_type.color %>
-  </p>
-
-  <p>
-    <strong>Duration:</strong>
-    <%= booking_type.duration %>
-  </p>
-
-  <p>
-    <strong>Payement required:</strong>
-    <%= booking_type.payement_required %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= booking_type.price %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= booking_type.user_id %>
-  </p>
-    <p>
-      <%= link_to "Show this booking type", booking_type, class: button_style %>
-    </p>
+ 
 </div>

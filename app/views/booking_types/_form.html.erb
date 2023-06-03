@@ -49,6 +49,7 @@
   <div class="flex flex-row gap-6 w-max m-5 ">
     <%= form.submit class: button_style %>
     <%= link_to "Back to booking types", booking_types_path, class: link_style%>
-
+    <%= link_to "Show this booking type", @booking_type, class: link_style %> 
+  
   </div>
 <% end %>
