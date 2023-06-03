@@ -12,15 +12,34 @@
 
 */
 
-@layer components{
- .title{
+@layer components {
+  .title {
     @apply text-3xl text-gray-700 font-serif font-extrabold;
-}
-.table{
-  @apply table-collapse w-full
-}
+  }
 
-.table-cell{
-@apply border border-slate-300 p-3 text-left bg-slate-50
-}
+  .title-2{
+    @apply text-2xl text-gray-700 font-serif font-extrabold m-3;
+  }
+  .new-table {
+    @apply table w-full;
+  }
+
+  .table-cell {
+    @apply border border-slate-300 p-3 text-left bg-slate-50 ;
+  }
+  .table-td {
+    @apply border border-slate-300 bg-white text-left p-3;
+  }
+  .each-booking-type{
+    @apply p-4 border shadow-xl block relative rounded-xl hover:shadow-2xl transition ease-linear duration-200 overflow-hidden;
+  }
+  .para-text{
+    @apply text-gray-600;
+  }
+  .grid-container{
+    @apply grid sm:grid-cols-1 md:grid-cols-3 gap-6 my-4;
+  }
+  .link-container{
+    @apply flex sm:flex-col md:flex-row items-center gap-4 mt-4;
+  }
 }
