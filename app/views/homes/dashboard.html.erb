@@ -1,7 +1,4 @@
 <%= render "dashboard" %>
-<div class="py-10 grid gird-cols-3 gap-6">
- <%= render @booking_type%>
-</div>
 
 <% if @bookings.pending.any?%>
   <%= render "pending", bookings: @bookings%>
@@ -14,3 +11,6 @@
 <% if @bookings.unapproved.any?%>
   <%= render "unapproved", bookings: @bookings%>
 <%end%>
+
+</div>
+  <div> 
