@@ -1,5 +1,9 @@
-
-<h1>New booking</h1>
-
+<% if @booking_type.payement_required?%>
+<h1 class="title">Schedule booking for <%= @booking_type.name%></h1>
+<p>Need to pay</p>
 <%= render "form", booking: @booking %>
 
+<%else%>
+<h1 class="title">Schedule booking for <%= @booking_type.name%></h1>
+<%= render "form", booking: @booking %>
+<%end%>
