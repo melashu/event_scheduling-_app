@@ -1,0 +1,9 @@
+<header class="p-5 flex justify-between shadow-lg">
+<li class="nav-link"><%= link_to "Home", default_root_path%> </li>
+
+ <ul class="flex justify-end gap-10 items-end p-2">
+ <li class="nav-link"><%= link_to "Free events", new_user_registration_path%> </li>
+ <li class="nav-link"><%= link_to "Sign up for free", new_user_registration_path%> </li>
+ <li class="nav-link"><%= link_to "Sign in", new_user_session_path, class: button_style%> </li>
+</ul>
+</header>
