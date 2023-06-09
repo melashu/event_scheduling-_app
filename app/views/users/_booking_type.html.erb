@@ -1,0 +1,28 @@
+<div id="<%= dom_id booking_type %>">
+  <div class= "each-booking-type">
+    <div class="h-1 w-full bg-slate-600 absolute top-0 left-0 right-0", style="background-color: <%=booking_type.color%>"></div>
+      <p>
+    <h3 class="font-medium text-2xl font-serif">Name <%= booking_type.name %></h3>
+    <p class="para-text"> Start Date <%=booking_type.start_date%></p>
+    <p class="para-text"> End Date <%=booking_type.end_date%></p>
+    <p class="para-text"> Location <%=booking_type.location%></p>
+
+    <%if booking_type.payement_required?%>
+       <div class="mt-2 pt-3 border-t-2">
+        <p>
+          <strong>Payement</strong>
+        </p>
+        <p>
+          <strong>Price</strong>
+          <%=number_to_currency(booking_type.price)%>
+        </p>
+       </div>
+    <%end%>
+  </p> 
+ <div class="link-container">
+ <%= link_to booking_type.payement_required? ? "Book with #{number_to_currency(booking_type.price)}": "Book for free", new_user_booking_path(booking_link: @user.booking_link, booking_type_id: booking_type.id), class: link_style%>
+  
+    </div>
+  </div>
+
+</div>
