@@ -33,17 +33,7 @@
     <%= form.rich_text_area :notes, class: input_style %>
   </div>
   <input type="hidden" name="booking[booking_type_id]" value="<%= @booking_type.id %>">
-  <div class="flex items-center gap-3 my-4">
-  <div>
-    <%= form.label :start_date, class: label_style %>
-    <%= form.datetime_field :start_date %>
-  </div>
 
-  <div>
-    <%= form.label :end_date, class: label_style %>
-    <%= form.datetime_field :end_date %>
-  </div>
-  </div>
 
   <div class="flex gap-6 items-center my-4">
     <%= form.submit @booking_type.payement_required? ? "Schedule this booking for #{number_to_currency(@booking_type.price)}" : "Schedule Booking", class: button_style %>
