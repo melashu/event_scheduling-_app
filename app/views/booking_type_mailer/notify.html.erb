@@ -1,5 +1,17 @@
-<h1>BookingType#notify</h1>
+<div style="padding: 10px;">
+<h1>Hi <%=@first_name%>, </h1>
+<h2>New event is hosted by <strong><%= @current_user.first_name%> <%= @current_user.last_name%></strong> do you want to check?</h2>
 
-<p>
-  <%= @host %>, find me in app/views/booking_type_mailer/notify.html.erb
-</p>
+<p><strong>Event Name: </strong><%=@booking_type.name%></p>
+<p><strong>Desceiption: </strong><%=@booking_type.description%></p>
+<%= link_to "Book this event", new_user_booking_url(booking_link: @current_user.booking_link, booking_type_id: @booking_type.id)%>
+
+<br/>
+Thank you again for choosing Ketero! 
+We look forward to working with you to make your event a success.<br/><br/>
+<strong>Sincerely, <br/>The Ketero Team </strong>
+
+<div style="">
+Linkedin
+</div>
+  </div>
