@@ -3,8 +3,8 @@
 <div>
 <p>We would like to inform you that <strong><%=@booking.first_name%> <%=@booking.last_name%> </strong> book on your <strong><%=@type.name%> </strong> event!</p>
 </div>
+<p><strong>Desceiption:</strong><%=@booking.notes%></p>
 <p>
-
 Take a look at all booked events <%= link_to "click here", authenticated_root_url%>.
 <br/>
 Thank you again for choosing Ketero! 
