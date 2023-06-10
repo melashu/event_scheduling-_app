@@ -1,0 +1,10 @@
+<%=render "homes/dashboard"%>
+  <% if @user.present?%>
+    <div class="grid-container">
+       <%@user.booking_types.each do |type| %>
+         <%=render "users/booking_type", booking_type: type%>
+       <%end%>
+    </div>
+  <%else%>
+  <h3 class="italic text-center text-3xl capitalize text-orange-700"><%= params[:booking_link]%> is not valid link.</h3>
+  <%end%>
