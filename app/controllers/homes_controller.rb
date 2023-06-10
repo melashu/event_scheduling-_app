@@ -5,6 +5,8 @@ class HomesController < ApplicationController
     
   end
 
+ 
+
   def dashboard
     @booking_type = current_user.booking_types
     @bookings = Booking.where(booking_type: current_user.booking_type_ids)

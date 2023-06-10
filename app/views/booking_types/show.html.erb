@@ -7,6 +7,6 @@
 <div class="flex gap-6 items-center mt-5">
   <%= link_to "Edit this booking type", edit_booking_type_path(@booking_type), class: link_style %> |
   <%= link_to "Back to booking types", booking_types_path, class: link_style %> |
-  <%= link_to "Back to dashboard", root_path, class: link_style %> |
+  <%= link_to "Back to dashboard", authenticated_root_path, class: link_style %> |
   <%= button_to "Destroy this booking type", @booking_type, method: :delete, class: link_style %>
 </div>

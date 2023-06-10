@@ -111,6 +111,10 @@ GEM
       activesupport (>= 5.0.0)
     jsbundling-rails (1.1.1)
       railties (>= 6.0.0)
+    launchy (2.5.2)
+      addressable (~> 2.8)
+    letter_opener (1.8.1)
+      launchy (>= 2.2, < 3)
     loofah (2.21.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -200,6 +204,7 @@ GEM
     tailwindcss-rails (2.0.29-x64-mingw-ucrt)
       railties (>= 6.0.0)
     thor (1.2.2)
+    time_greeting_message (0.0.3)
     timeout (0.3.2)
     turbo-rails (1.4.0)
       actionpack (>= 6.0.0)
@@ -239,6 +244,7 @@ DEPENDENCIES
   image_processing (~> 1.2)
   jbuilder
   jsbundling-rails
+  letter_opener
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
@@ -246,6 +252,7 @@ DEPENDENCIES
   sprockets-rails
   stimulus-rails
   tailwindcss-rails (~> 2.0, >= 2.0.29)
+  time_greeting_message (~> 0.0.3)
   turbo-rails
   tzinfo-data
   web-console

@@ -1,14 +1,17 @@
+<%=render "homes/header"%>
+
+<div class="w-5/12 m-auto p-5 my-6 border border-blue-600">
 <h2 class="title">Log in</h2>
-<div>
+<div class="  m-auto">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field mb-4">
     <%= f.label :email, class: label_style %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: input_style %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input-box" %>
   </div>
 
   <div class="field mb-4">
     <%= f.label :password, class: label_style %><br />
-    <%= f.password_field :password, autocomplete: "current-password", class: input_style %>
+    <%= f.password_field :password, autocomplete: "current-password", class: "input-box" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -25,3 +28,5 @@
 <% end %>
 </div>
 
+
+  </div>

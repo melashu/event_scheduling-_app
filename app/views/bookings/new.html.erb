@@ -1,3 +1,6 @@
+<%=render "homes/header"%>
+<div class="w-10/12 my-5 mx-auto">
+
 <% if @booking_type.payement_required?%>
 <h1 class="title">Schedule booking for <%= @booking_type.name%></h1>
 <p>Need to pay</p>
@@ -7,3 +10,4 @@
 <h1 class="title">Schedule booking for <%= @booking_type.name%></h1>
 <%= render "form", booking: @booking %>
 <%end%>
+</div>

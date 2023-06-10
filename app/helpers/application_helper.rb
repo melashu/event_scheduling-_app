@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def link_style
-    'text-gray-600 block border border-blue-200 p-2 hover:border-blue-500 hover:text-blue-500'
+    'text-gray-600 font-bold w-max block border border-blue-200 p-2 hover:border-blue-500 hover:text-blue-500'
   end
 
 

@@ -1,9 +1,9 @@
-<header class="flex justify-between w-full p-5 m-5 shadow-xl border">
+<header class="p-6 md:flex flex-wrap items-center md:justify-between shadow-lg sticky">
 
-<ul class="flex gap-1 align-middle">
- <li class="text-black font-bold no-underline"><%= link_to "Home", authenticated_root_path%> </li>
- <li class="text-black font-bold no-underline"><%= link_to "All Booking Type", booking_types_path%> </li>
- <li class="text-black font-bold no-underline"><%= link_to "Create Booking Type", new_booking_type_path%> </li>
+<ul class="flex gap-6 align-middle">
+ <li class="nav-link border-r-2 pr-7 nav-hover"><%= link_to "Home", authenticated_root_path%> </li>
+ <li class="nav-link border-r-2 pr-7 nav-hover"><%= link_to "My Booking Type", booking_types_path%> </li>
+ <li class="nav-link border-r-2 pr-7 nav-hover"><%= link_to "Create Booking Type", new_booking_type_path%> </li>
 </ul>
 <div class="flex  gap-1 align-baseline justify-center">
 <%= link_to "Edit Profile", edit_user_registration_path, class: link_style%>

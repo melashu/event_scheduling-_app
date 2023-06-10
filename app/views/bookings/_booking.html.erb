@@ -11,8 +11,7 @@
         <td class="table-td">    <%= booking.email %>
 </td>
     
-        <td class="table-td"><%= booking.start_date.strftime('%D at %I:%M%p') %></td>
-        <td class="table-td"><%= booking.end_date.strftime('%D at %I:%M%p') %></td>
+      
         <td class="table-td"><%= booking.booking_type.name %></td>
         <td class="table-td"><%=booking.booking_type.payement_required? ? "Yes" : "No"%></td>
         <td class="table-td"><%= booking.customer_paid? ? "Yes" : "No" %></td>

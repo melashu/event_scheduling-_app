@@ -1,6 +1,6 @@
 
 
-<%= form_with(model: booking) do |form| %>
+<%= form_with(model: booking, class: "w-8/12 my-5 mx-auto") do |form| %>
   <% if booking.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
@@ -15,22 +15,22 @@
 
   <div>
     <%= form.label :first_name, style: "display: block", class: label_style %>
-    <%= form.text_field :first_name, class: input_style %>
+    <%= form.text_field :first_name, class: "input-box" %>
   </div>
 
   <div>
     <%= form.label :last_name, style: "display: block", class: label_style %>
-    <%= form.text_field :last_name, class: input_style %>
+    <%= form.text_field :last_name, class: "input-box" %>
   </div>
 
   <div>
     <%= form.label :email, style: "display: block", class: label_style %>
-    <%= form.text_field :email, class: input_style %>
+    <%= form.text_field :email, class: "input-box" %>
   </div>
 
   <div>
     <%= form.label :notes, style: "display: block", class: label_style %>
-    <%= form.rich_text_area :notes, class: input_style %>
+    <%= form.rich_text_area :notes, class: "input-box w-full" %>
   </div>
   <input type="hidden" name="booking[booking_type_id]" value="<%= @booking_type.id %>">
 
