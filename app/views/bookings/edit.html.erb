@@ -1,11 +1,46 @@
 
-<h1>Editing booking</h1>
+<h2 class="title-2">Hi <%=@booking.first_name%>, you are rescheduling your booking </h2>
 
-<%= render "form", booking: @booking %>
+<%= form_with(model: @booking) do |form| %>
+  <% if @booking.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+
+      <ul>
+        <% @booking.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :first_name, style: "display: block", class: label_style %>
+    <%= form.text_field :first_name, class: input_style %>
+  </div>
+
+  <div>
+    <%= form.label :last_name, style: "display: block", class: label_style %>
+    <%= form.text_field :last_name, class: input_style %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block", class: label_style %>
+    <%= form.text_field :email, class: input_style %>
+  </div>
+
+  <div>
+    <%= form.label :notes, style: "display: block", class: label_style %>
+    <%= form.rich_text_area :notes, class: input_style %>
+  </div>
+  <input type="hidden" name="booking[booking_type_id]" value="<%= @booking_type.id %>">
+
+
+  <div class="flex gap-6 items-center my-4">
+    <%= form.submit "Reschedule Booking", class: button_style %>
+  </div>
+<% end %>
+
 
 <br>
 
-<div class="flex gap-6 items-center">
-  <%= link_to "Show this booking", @booking %> |
-  <%= link_to "Back to bookings", bookings_path %>
-</div>
