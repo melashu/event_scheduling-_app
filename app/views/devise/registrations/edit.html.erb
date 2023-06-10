@@ -34,6 +34,10 @@
     <%= f.label :password_confirmation, class: label_style %>
     <%= f.password_field :password_confirmation, autocomplete: "new-password", class:input_style %>
   </div>
+  <div class="field mb-6 flex flex-col">
+    <%= f.label :current_password, class: label_style %>
+    <%= f.password_field :current_password, autocomplete: "current-password", class:input_style %>
+  </div>
 
   <div class="actions">
     <%= f.submit "Update", class: button_style %>
