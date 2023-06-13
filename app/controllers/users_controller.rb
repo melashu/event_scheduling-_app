@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
    def free_event
-    @free_events = BookingType.where(payement_required: false).includes(:user)
+    @free_events = BookingType.where(payement_required: false).includes(:user).order(created_at: :desc)
    end
 
 end
