@@ -69,4 +69,8 @@
   .leading-title{
     @apply text-4xl ml-6 text-blue-700 font-bold font-sans w-max text-left  hover:cursor-pointer hover:after:content-['->'] hover:after:text-red-700 p-5
   }
+
+  .file-style{
+    @apply block p-3 w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none 
+  }
 }
