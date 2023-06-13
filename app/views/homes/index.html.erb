@@ -21,6 +21,13 @@
         Latest Events
     </h2> 
     <section class="middle-section mx-5 mt-5 border-t-2">
+    <input type="search" placeholder="Search" name="search" class="rounded-full w-8/12">
+
+     <div class="grid-container mx-6">
+       <%@paid_events.each do |event| %>
+         <%=render "users/booking_type", event: event%>
+       <%end%>
+    </div>
    </section>
 <div>
 
