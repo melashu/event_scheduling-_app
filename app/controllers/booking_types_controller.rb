@@ -66,7 +66,7 @@ class BookingTypesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def booking_type_params
-    params.require(:booking_type).permit(:name, :location, :description, :color, :start_date, :end_date,
+    params.require(:booking_type).permit(:name, :cover_photo, :location, :description, :color, :start_date, :end_date,
                                          :payement_required, :price)
   end
 end
