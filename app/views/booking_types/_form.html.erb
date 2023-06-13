@@ -30,6 +30,10 @@
     <%= form.label :color, style: "display: block", class: label_style %>
     <%= form.color_field :color %>
   </div>
+  <div>
+    <%= form.label :cover_photo, style: "display: block", class: label_style %>
+    <%= form.file_field :cover_photo, required: true, class: "file-style"%>
+  </div>
 
   <div class="flex items-center">
     <%= form.check_box :payement_required%>
