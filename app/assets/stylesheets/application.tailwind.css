@@ -73,4 +73,13 @@
   .file-style{
     @apply block p-3 w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none 
   }
+
+  .link-style{
+    text-decoration: none !important;
+    color: #fff !important;
+    @apply text-xl w-max text-white no-underline rounded hover:rounded-lg bg-sky-700 hover:bg-sky-500 active:bg-sky-800 p-2
+  }
+
+
+
 }

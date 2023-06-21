@@ -1,0 +1,105 @@
+@import 'activeadmin_addons/all';
+// Sass variable overrides must be declared before loading up Active Admin's styles.
+//
+// To view the variables that Active Admin provides, take a look at
+// `app/assets/stylesheets/active_admin/mixins/_variables.scss` in the
+// Active Admin source.
+//
+// For example, to change the sidebar width:
+// $sidebar-width: 242px;
+
+// Active Admin's got SASS!
+@import "active_admin/mixins";
+@import "active_admin/base";
+
+$skinMainFirstColor: #024d71 !default;
+$skinMainSecondColor: #168c40 !default;
+$menu-arrow-dark-icon-url: "active_admin/nested_menu_arrow_dark.gif" !default;
+
+@import "wigu/active_admin_theme";
+
+// Overriding any non-variable Sass must be done after the fact.
+// For example, to change the default status-tag color:
+//
+$pending-color: #FF9900;
+$rejected-color: #FF0000;
+$approved-color: #08A510;
+
+.status_tag {
+  &.pending { background: $pending-color; }
+  &.rejected { background: $rejected-color; }
+  &.approved { background: $approved-color; }
+}
+
+.bool-value {
+  font-size: 12px;
+
+  &.true-value {
+    color: #08A510;
+  }
+
+  &.false-value {
+    color: #FF0000;
+  }
+}
+
+.grid-container {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.each-booking-type {
+  background-color: #fff;
+  width: 100%;
+  padding: 10px 15px 15px 15px;
+  box-shadow: -5px 5px 25px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 2rem;
+  align-items: center;
+}
+
+.each-booking-type:hover {
+  box-shadow: -5px 10px 34px 17px rgba(70, 45, 45, 0.1);
+  cursor: pointer;
+}
+.cover_image {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+.link-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.link-style {
+  background-color: #024d71;
+  color: #fff !important;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 1.5rem;
+  margin-bottom: 10px;
+  text-decoration: none !important;
+}
+.link-style:hover {
+  background-color: #024e71d3;
+}
+
+.para-text {
+  text-align: center;
+}
+
+.notifier {
+  color: #f11414;
+}
+
+.image-container{
+    display: flex;
+    align-items: center;
+}
+
+a{
+    text-decoration: none !important;
+}
