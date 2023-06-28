@@ -1,6 +1,6 @@
 module ApplicationHelper
   def button_style
-    'text-1xl w-max rounded hover:rounded-lg bg bg-sky-700 hover:bg-sky-500 active:bg-sky-800 p-2 text-white w-24'
+    'text-1xl text-white w-max rounded hover:rounded-lg bg bg-sky-700 hover:bg-sky-500 active:bg-sky-800 p-2 text-white w-24'
   end
 
   def link_style

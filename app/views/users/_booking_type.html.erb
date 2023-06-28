@@ -1,11 +1,13 @@
 <div id="<%= dom_id event %>">
   <div class= "each-booking-type">
-    <div class="h-1 w-full bg-slate-600 absolute top-0 left-0 right-0", style="background-color: <%=event.color%>"></div>
+    <div class="divider h-1 w-full bg-slate-600 absolute top-0 left-0 right-0", style="background-color: <%=event.color%>"></div>
       <p>
     <h3 class="font-medium text-2xl font-serif"><strong>Hosted By:</strong> <%= event.user.first_name %></h3>
+     <%if event.cover_photo.attached?%>
+      <div class="image-container"> <%= image_tag event.cover_photo, class: 'cover_image'%> </div>
+     <%end%>
     <p class="para-text"> <strong>Event Name:</strong> <%=event.name%></p>
-    <p class="para-text"> <strong>Start Date:</strong> <%=event.start_date%></p>
-    <p class="para-text"> <strong>End Date:</strong><%=event.end_date%></p>
+    <p class="para-text"> <b><%=event.start_date.strftime('%v,%R')%></b> <strong>to </strong> <b><%=event.end_date.strftime('%v,%R')%></b></p>
     <p class="para-text"> <strong>Location:</strong> <%=event.location%></p>
 
     <%if event.payement_required?%>
@@ -21,8 +23,8 @@
     <%end%>
   </p> 
  <div class="link-container">
-    <%= link_to event.payement_required? ? "Book with #{number_to_currency(event.price)}": "Book for free", new_user_booking_path(booking_link: event.user.booking_link, booking_type_id: event.id), class: button_style%>
-    <p class="italic text-gray-600"><%=event.bookings.size>0? "#{event.bookings.size} people book this event": "No one book this event yet"%></p>
+    <%= link_to event.payement_required? ? "Book with #{number_to_currency(event.price)}": "Book for free", new_user_booking_path(booking_link: event.user.booking_link, booking_type_id: event.id), class: 'link-style'%>
+    <p class="italic text-gray-600 notifier"><%=event.bookings.size>0? "#{event.bookings.size} people book this event": "No one book this event yet"%></p>
     </div>
   </div>
 

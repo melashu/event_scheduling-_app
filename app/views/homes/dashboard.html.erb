@@ -8,7 +8,7 @@
   <%= render "approved", bookings: @bookings%>
 <%end%>
 
-<% if @bookings.unapproved.any?%>
+<% if @bookings.rejected.any?%>
   <%= render "unapproved", bookings: @bookings%>
 <%end%>
 

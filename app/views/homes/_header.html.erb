@@ -1,8 +1,8 @@
-<header class="p-6 md:flex flex-wrap items-center md:justify-between shadow-lg sticky ">
-<li class="nav-link"><%= link_to "Home", default_root_path%> </li>
+<header class="p-4 md:flex flex-wrap items-center md:justify-between shadow-lg sticky ">
+<li class="nav-link"><%= link_to "Home", default_root_path, class: "no-underline"%> </li>
  <ul class="sm:grid md:flex md:justify-end gap-10 items-center md:p-1">
  <li class="nav-link nav-hover"><%= link_to "Free events", free_event_path%> </li>
  <li class="nav-link nav-hover"><%= link_to "Sign up for free", new_user_registration_path%> </li>
- <li class="nav-link sm:mt-3"><%= link_to "Sign in", new_user_session_path, class: button_style%> </li>
+ <li class="nav-link sm:mt-3"><%= link_to "Sign in", new_user_session_path, class: 'link-style'%> </li>
 </ul>
 </header>
