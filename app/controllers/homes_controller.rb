@@ -2,7 +2,7 @@ class HomesController < ApplicationController
   before_action :authenticate_user!, only: [:dashboard]
 
    def index
-   @paid_events  =  BookingType.where(payement_required: true).includes(:user).order(created_at: :desc)
+   @paid_events  =  BookingType.paginate(page: params[:page]).includes(:user).order(created_at: :desc)
   end
 
  
