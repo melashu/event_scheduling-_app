@@ -13,16 +13,26 @@ ActiveAdmin.register BookingType do
     filter :end_date, as: :date_time_picker_filter
     filter :location
 
+    member_action :save, method: [:post] do
+     ActiveAdmin::DynamicFields.update(resource, params)
+    end
+     
     index do
       selectable_column
       toggle_bool_column :payement_required, success_message: 'Payement status updated'
-      column :name
-      column :location
+      column "Name" do |type|
+        div type.name, ActiveAdmin::DynamicFields.edit_string(:name, save_admin_booking_type_path(type.id))
+      end
+      column "Location" do |type|
+        div type.location, ActiveAdmin::DynamicFields.edit_string(:location, save_admin_booking_type_path(type.id))
+      end
       column "Price" do |type|
         number_to_currency(type.price)
       end
       column :user
-      column :start_date
+      column ":start_date" do |type|
+        div type.start_date, ActiveAdmin::DynamicFields.edit_string(:start_date, save_admin_booking_type_path(type.id))
+      end
       column :end_date
       actions
     end
