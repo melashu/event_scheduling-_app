@@ -4,7 +4,7 @@ class BookingTypesController < ApplicationController
 
   # GET /booking_types or /booking_types.json
   def index
-    @booking_types = current_user.booking_types
+    @booking_types = current_user.booking_types.paginate(page: params[:page])
   end
 
   # GET /booking_types/1 or /booking_types/1.json
