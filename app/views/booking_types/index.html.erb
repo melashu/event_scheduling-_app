@@ -2,13 +2,14 @@
 
 <p style="color: green"><%= notice %></p>
 
-<h1 class="title-2">Booking types</h1>
-
+<h1 class="title-2 m-5">Booking types</h1>
+<%= link_to "Pdf report", booking_types_path(format: 'pdf')%>
 <div id="booking_types" class="grid-container">
   <% @booking_types.each do |booking_type| %>
     <%= render booking_type %>
-
   <% end %>
-</div>
 
-<%= link_to "Create New Booking Type", new_booking_type_path, class: link_style %>
+</div>
+    <%=render "shared/paginate", model: @booking_types%>
+
+
