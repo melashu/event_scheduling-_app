@@ -97,17 +97,18 @@ After runing `bin/dev`
  You can create user account and login to the page or 
 
  Use the following login information
-  ``` 
-    emial: user102@gmail.com
+  ```
+  emial: user102@gmail.com
     password: 12345678
-    
-    ```
+
+```
 
 To access the admin page user 
 
 `localhost:5000/admin` 
 
 use the following login information
+
     ```
     emial: meshu.amare@gmail.com
     password: 12345678
