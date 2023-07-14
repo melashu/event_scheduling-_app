@@ -1,14 +1,13 @@
 
-# event scheduling
+# event-scheduling
 
 <a name="readme-top"></a>
 
 
 # 📗 Table of Contents
 
-- [lemon-backend](#lemon-backend)
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 lemon-backend ](#-lemon-backend-)
+- [📖 event scheduling](#event-scheduling)
   - [🛠 Built With ](#-built-with-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
@@ -19,7 +18,7 @@
   - [⭐️ Show your support ](#️-show-your-support-)
   - [📝 License](#-license)
 
-# 📖 event scheduling <a name="about-project"></a>
+# 📖 event-scheduling <a name="about-project"></a>
 
 The application allows users to create events, book events, receive email notifications, integrate with payment providers, and cancel events.
 
