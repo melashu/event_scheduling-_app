@@ -14,9 +14,9 @@ class UsersController < ApplicationController
   end
 
    def free_event
-   term = params[:query]..present? ? params[:query] : '*'
-   @free_events = BookingType.search(term, highlight: {tag: "<strong>"}, page: params[:page], per_page: 5, where: {payement_required: false}, order: {created_at: :desc})
-  #  @free_events =  BookingType.paginate(page: params[:page]).where(payement_required: false).includes(:user).order(created_at: :desc) 
+  #  term = params[:query]..present? ? params[:query] : '*'
+  #  @free_events = BookingType.search(term, highlight: {tag: "<strong>"}, page: params[:page], per_page: 5, where: {payement_required: false}, order: {created_at: :desc})
+   @free_events =  BookingType.paginate(page: params[:page]).where(payement_required: false).includes(:user).order(created_at: :desc) 
    end
 
 end

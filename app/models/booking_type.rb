@@ -4,8 +4,8 @@ class BookingType < ApplicationRecord
   has_rich_text :description
   has_one_attached :cover_photo
   self.per_page = 4
-  searchkick highlight: [:name]
-  scope :search_import, -> { includes(:users) }
+  # searchkick highlight: [:name]
+  # scope :search_import, -> { includes(:users) }
 
   validates :name, :location, :color, presence: true
   validates :price, numericality: { only_integer: true, greater_than: 0 }, if: :payement_required?
