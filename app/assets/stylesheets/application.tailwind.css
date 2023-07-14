@@ -79,6 +79,13 @@
     color: #fff !important;
     @apply text-xl w-max text-white no-underline rounded hover:rounded-lg bg-sky-700 hover:bg-sky-500 active:bg-sky-800 p-2
   }
+  .booking-container{
+    @apply flex gap-3 justify-between p-3 m-3 border-b shadow-xl
+  }
+  .booking{
+    @apply p-4 text-2xl text-bold text-blue-700
+  }
+
 
 
 

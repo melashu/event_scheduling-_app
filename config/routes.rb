@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get ':booking_link', to: 'users#show', as: 'user'
   get 'free/event', to: 'users#free_event', as: 'free_event'
 
+  get 'users/autocomplete', to: 'users#autocomplete', as: 'autocomplete'
+
   scope '/:booking_link', as: 'user' do
     resources :bookings, only: [:new, :index]
   end

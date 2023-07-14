@@ -5,6 +5,13 @@ class BookingTypesController < ApplicationController
   # GET /booking_types or /booking_types.json
   def index
     @booking_types = current_user.booking_types.paginate(page: params[:page])
+    respond_to do |format|
+      format.html 
+      format.pdf do
+        pdf = BookingTypePdf.new(@booking_types)
+        send_data pdf.render, filename: "Pdf #{Time.zone.now}.pdf", type: "application/pdf", disposition: 'inline'
+      end
+    end
   end
 
   # GET /booking_types/1 or /booking_types/1.json

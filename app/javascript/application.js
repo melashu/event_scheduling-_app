@@ -4,5 +4,7 @@ import "./controllers"
 import "trix"
 import "@rails/actiontext"
 
+//= require typeahead.bundle
 //= require_tree .
+//= require activeadmin/dynamic_fields
 

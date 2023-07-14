@@ -1,8 +1,24 @@
 ActiveAdmin.register BookingType do
   includes :bookings
+  index download_links: [:xml, :pdf, :csv, :json]
   permit_params :name, :location, :color, :payement_required, :price, :user_id, :start_date, :end_date
 
-   
+  # respond_to do |format|
+  #   format.html
+  #   format.pdf do
+  #     render pdf: "file_name" 
+  #   end
+  # end
+
+  # controller do
+  #   def index
+  #     respond_to do |format|
+  #       format.pdf do
+  #         render pdf: "file_name", layout: 'pdf', template: 'admin/report'
+  #       end
+  #     end
+  #   end
+  # end
 
     filter :name, as: :select, collection: proc {BookingType.pluck(:name)}
     filter :price, as: :numeric_range_filter
@@ -16,8 +32,28 @@ ActiveAdmin.register BookingType do
     member_action :save, method: [:post] do
      ActiveAdmin::DynamicFields.update(resource, params)
     end
-     
+
+    collection_action :pdf, method: [:get] do
+      respond_to do |format|
+        format.html 
+        format.pdf do
+          pdf = BookingTypePdf.new(BookingType.all)
+          send_data pdf.render, filename: "Pdf #{Time.zone.now}.pdf", type: "application/pdf", disposition: 'inline'  
+        end
+      end
+    end
+
+    action_item :update do
+      link_to 'generate grade report', pdf_admin_booking_types_path(format: :pdf), data: { confirm: 'Are you sure?' }        
+    end
+    # controller do 
+    #   def index (n)
+       
+    #   end
+    # end
+
     index do
+      
       selectable_column
       toggle_bool_column :payement_required, success_message: 'Payement status updated'
       column "Name" do |type|

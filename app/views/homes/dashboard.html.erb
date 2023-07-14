@@ -1,5 +1,20 @@
 <%= render "dashboard" %>
-
+<div class="my-4 mx-3">
+  <h1 class="title-2 text-right text-green-700">Welcome <%= current_user.name.full%>!</h1>
+  <h2 class="title-2">Avaliable bookings</h2>
+  
+  <div class="booking-container">
+     <div class="booking">
+       <p><%=pluralize(@bookings.pending.size, 'booking')%> Pending</p>
+     </div>
+      <div class="booking">
+       <p><%=pluralize(@bookings.approved.size, 'booking')%> Approved</p>
+     </div>
+      <div class="booking">
+       <p><%=pluralize(@bookings.rejected.size, 'booking')%> Rejected</p>
+     </div>
+  </div>
+</div>
 <% if @bookings.pending.any?%>
   <%= render "pending", bookings: @bookings%>
 <%end%>

@@ -6,17 +6,22 @@ ruby "3.1.2"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 gem 'tailwindcss-rails', '~> 2.0', '>= 2.0.29'
+# gem 'active_admin_role'
+gem 'activeadmin_dynamic_fields'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
-
+gem 'will_paginate'
+# gem 'wicked_pdf'
+# gem 'wkhtmltopdf-binary'
+gem 'prawn'
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 gem 'time_greeting_message', '~> 0.0.3'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
-
+gem 'prawn-table', '~> 0.2.2'
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
 gem 'activeadmin'
@@ -37,7 +42,8 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 gem 'devise'
-
+gem "searchkick"
+gem "elasticsearch", "< 7.14"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

@@ -137,3 +137,16 @@
     .flickr_pagination .next_page {
       margin-left: 1em; }
   
+      .search-form{
+         display: flex;
+         gap: 24px;
+         width: 70%;
+         margin: auto 0;
+      }
+
+      #query{
+        border: none;
+        outline: none;
+        border-radius: 60px;
+        border: 2px #8b8bf3 solid;
+      }
